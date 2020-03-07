@@ -1,5 +1,10 @@
 import React from "react";
-import "./repo-item.styles";
+import {
+  CreatorImage,
+  ItemHeader,
+  DescriptionParagraph,
+  DetailsList,
+} from "./repo-item.styles";
 
 const RepoItem = ({
   name,
@@ -14,35 +19,25 @@ const RepoItem = ({
   const { avatar_url } = owner;
   return (
     <div>
-      <h1>
+      <ItemHeader>
         <a href={html_url}>{name}</a>
-        <img src={avatar_url} alt='' />
-      </h1>
-      <p> {description} </p>
-      <ul>
+        <CreatorImage src={avatar_url} alt='' />
+      </ItemHeader>
+      <DescriptionParagraph> Description: {description} </DescriptionParagraph>
+      <DetailsList>
         <li>
-          <a href='#'>
-            <i className='fas fa-star' /> {watchers}
-          </a>
+          <i className='far fa-eye' /> {watchers}
         </li>
         <li>
-          {" "}
-          <a href='#'>
-            <i className='fas fa-star' /> {language}
-          </a>
+          <i className='fas fa-globe' /> {language}
         </li>
         <li>
-          <a href='#'>
-            <i className='fas fa-star' /> {forks}
-          </a>
+          <i className='fas fa-code-branch' /> {forks}
         </li>
         <li>
-          {" "}
-          <a href='#'>
-            <i className='fas fa-star' /> {open_issues}
-          </a>
+          <i className='fas fa-exclamation' /> Open issues: {open_issues}
         </li>
-      </ul>
+      </DetailsList>
     </div>
   );
 };

@@ -1,19 +1,14 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, Fragment } from "react";
 import GithubContext from "../../context/github/githubContext";
 import Spinner from "../spinner/Spinner.component";
 import RepoItem from "../repo-item/repo-item.component";
 
+import { ListContainer } from "./repo-list.styles";
+import ButtonFooter from "../button-footer/button-footer.component";
+
 const RepoList = () => {
   const githubContext = useContext(GithubContext);
-  const {
-    loading,
-    getData,
-    repos,
-    pageStart,
-    pageEnd,
-    pageUp,
-    pageDown,
-  } = githubContext;
+  const { loading, getData, repos, pageEnd, pageStart } = githubContext;
 
   useEffect(() => {
     getData();
@@ -22,22 +17,16 @@ const RepoList = () => {
   return (
     <div>
       {loading && <Spinner />}
-      {!loading &&
-        repos &&
-        repos.map(
-          (repo, index) =>
-            index <= pageEnd &&
-            index >= pageStart && <RepoItem key={repo.id} {...repo} />
-        )}
       {!loading && repos && (
-        <div className='button-footer'>
-          {pageStart !== 0 && (
-            <button onClick={() => pageDown()}>Previous</button>
+        <ListContainer>
+          {repos.map(
+            (repo, index) =>
+              index <= pageEnd &&
+              index >= pageStart && <RepoItem key={repo.id} {...repo} />
           )}
-          {pageEnd !== repos.length - 1 && (
-            <button onClick={() => pageUp()}>Next</button>
-          )}
-        </div>
+
+          <ButtonFooter />
+        </ListContainer>
       )}
     </div>
   );
