@@ -7,7 +7,7 @@ export const ListToggleButton = styled.button`
 
   width: 80px;
   height: 30px;
-  // cursor: pointer;
+  cursor: ${({ dataList }) => (dataList ? "initial" : "pointer")};
 
   outline: none;
   border: none;

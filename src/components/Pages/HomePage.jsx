@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from "react";
-import RepoList from "../repo-list/repo-list.component";
-import RepoTable from "../repo-table/repo-table.component";
-import Spinner from "../spinner/Spinner.component";
-import ListToggle from "../list-toggle/list-toggle.component";
+import RepoList from "../Layout/repo-list/repo-list.component";
+import RepoTable from "../Layout/repo-table/repo-table.component";
+import Spinner from "../Layout/spinner/Spinner.component";
+import ListToggle from "../Layout/list-toggle/list-toggle.component";
 import GithubContext from "../../context/github/githubContext";
 
 const HomePage = () => {

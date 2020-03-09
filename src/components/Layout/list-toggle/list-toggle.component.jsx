@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import GithubContext from "../../context/github/githubContext";
+import GithubContext from "../../../context/github/githubContext";
 import { ListToggleButton, ToggleContainer } from "./list-toggle.styles";
 
 const ListToggle = () => {

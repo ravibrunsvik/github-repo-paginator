@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import GithubContext from "../../context/github/githubContext";
+import GithubContext from "../../../context/github/githubContext";
 import RepoItem from "../repo-item/repo-item.component";
 import ButtonFooter from "../button-footer/button-footer.component";
 
@@ -19,7 +19,7 @@ const RepoTable = () => {
               <i className='fas fa-code-branch' /> Forks
             </th>
             <th>
-              <i className='far fa-eye' /> Subscribers
+              <i className='far fa-eye' /> Watchers
             </th>
             <th>
               <i className='fas fa-exclamation' /> Open issues

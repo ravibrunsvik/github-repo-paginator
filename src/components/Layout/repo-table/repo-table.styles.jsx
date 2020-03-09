@@ -16,9 +16,11 @@ export const GithubTable = styled.table`
   border-radius: 10px;
   border-collapse: collapse;
 
-  // & tbody tr {
-  //   border-bottom: 1px solid gray;
-  // }
+  & tbody tr {
+    &:hover {
+      background: #f1f1f1;
+    }
+  }
 
   & td {
     width: 20%;

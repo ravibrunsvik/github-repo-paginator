@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import GithubContext from "../../context/github/githubContext";
+import GithubContext from "../../../context/github/githubContext";
 import RepoItem from "../repo-item/repo-item.component";
 
 import { ListContainer } from "./repo-list.styles";

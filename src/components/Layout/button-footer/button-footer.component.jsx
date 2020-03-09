@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import GithubContext from "../../context/github/githubContext";
+import GithubContext from "../../../context/github/githubContext";
 
 import { ButtonContainer, StyledButton } from "./button-footer.styles";
 
