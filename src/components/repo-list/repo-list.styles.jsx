@@ -6,4 +6,6 @@ export const ListContainer = styled.div`
   justify-content: center;
   align-content: center;
   position: relative;
+  width: 80%;
+  margin: auto;
 `;

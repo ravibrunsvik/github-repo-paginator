@@ -1,11 +1,12 @@
 import React from "react";
 import logo from "./spinner.gif";
+import { SpinnerContainer } from "./Spinner.styles";
 
 const Spinner = () => {
   return (
-    <div>
+    <SpinnerContainer>
       <img src={logo} alt='Loading...' />
-    </div>
+    </SpinnerContainer>
   );
 };
 

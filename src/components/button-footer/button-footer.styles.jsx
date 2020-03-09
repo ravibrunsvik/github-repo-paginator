@@ -8,19 +8,23 @@ export const ButtonContainer = styled.div`
 `;
 
 export const StyledButton = styled.button`
-  width: 100px;
-  height: 50px;
+  width: 70px;
+  height: 35px;
   margin: 10px;
-  text-transform: uppercase;
-  box-shadow: 2px 4px 13px grey, -2px 0 13px grey;
   border: none;
-  border-radius: 10px;
+  border-radius: 4px;
   outline: none;
   cursor: pointer;
-  background: black;
-  color: white;
+  background: white;
+  box-shadow: 0px 3px 4px #d7d7d7;
+  color: black;
+  user-select: none;
 
   &:hover {
-    background: #ccc;
+    box-shadow: 0px 2px 3px #d7d7d7;
+  }
+
+  &:active {
+    box-shadow: 0px 2px 1px #d7d7d7;
   }
 `;

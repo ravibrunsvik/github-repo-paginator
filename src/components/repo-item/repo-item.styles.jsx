@@ -1,22 +1,28 @@
 import styled from "styled-components";
 
 export const ItemHeader = styled.h1`
-  background: black;
-  color: white;
   height: 50px;
-  margin: auto;
+  margin: 5px 0;
   position: relative;
   border-radius: 10px;
   padding: 10px 40px;
-
+  box-shadow: 0px 3px 6px #d7d7d7;
   & a {
-    color: white;
+    color: black;
     text-decoration: none;
     cursor: pointer;
 
     &:hover {
       color: gray;
     }
+  }
+`;
+
+export const TableLink = styled.a`
+  color: black;
+  text-decoration: none;
+  &:hover {
+    color: gray;
   }
 `;
 
@@ -36,10 +42,8 @@ export const DetailsList = styled.ul`
   list-style: none;
 
   & li {
-    padding: 5px 0;
-  }
+    display: inline-block;
 
-  & i {
-    // border: 1px solid black;
+    padding: 5px 10px;
   }
 `;

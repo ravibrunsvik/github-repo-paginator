@@ -6,8 +6,8 @@ import {
   PAGE_DOWN,
   PAGE_UP,
   REFRESH,
-  GET_DATA_FAILURE,
-  GET_DATA_SUCCESS,
+  GET_DATA,
+  TOGGLE_LIST,
 } from "../types";
 
 const GithubState = ({ children }) => {
@@ -16,6 +16,7 @@ const GithubState = ({ children }) => {
     pageStart: 0,
     pageEnd: 19,
     loading: true,
+    list: false,
   };
 
   const [state, dispatch] = useReducer(GithubReducer, initialState);
@@ -28,7 +29,7 @@ const GithubState = ({ children }) => {
       );
 
       let result = await data.json();
-      dispatch({ type: GET_DATA_SUCCESS, payload: result.items });
+      dispatch({ type: GET_DATA, payload: result.items });
     } catch (err) {
       console.error(err);
     }
@@ -45,6 +46,12 @@ const GithubState = ({ children }) => {
     dispatch({ type: PAGE_UP });
   };
 
+  // Toggle list/table
+  const toggleList = () => {
+    setLoading();
+    dispatch({ type: TOGGLE_LIST });
+  };
+
   // Page down
   const pageDown = () => {
     setLoading();
@@ -55,10 +62,6 @@ const GithubState = ({ children }) => {
     dispatch({ type: SET_LOADING });
   };
 
-  const getDataFailure = msg => {
-    dispatch({ type: GET_DATA_FAILURE, payload: msg });
-  };
-
   return (
     <GithubContext.Provider
       value={{
@@ -66,10 +69,12 @@ const GithubState = ({ children }) => {
         pageStart: state.pageStart,
         pageEnd: state.pageEnd,
         loading: state.loading,
+        list: state.list,
         pageUp,
         pageDown,
         getData,
         refresh,
+        toggleList,
       }}
     >
       {children}

@@ -1,13 +1,12 @@
 import React from "react";
 import "./App.css";
 import GithubState from "./context/github/GithubState";
-
-import RepoList from "./components/repo-list/repo-list.component";
+import HomePage from "./components/Pages/HomePage";
 
 const App = () => {
   return (
     <GithubState>
-      <RepoList />
+      <HomePage />
     </GithubState>
   );
 };

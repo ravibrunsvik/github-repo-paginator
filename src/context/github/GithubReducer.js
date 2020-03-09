@@ -3,8 +3,8 @@ import {
   PAGE_UP,
   REFRESH,
   SET_LOADING,
-  GET_DATA_SUCCESS,
-  GET_DATA_FAILURE,
+  GET_DATA,
+  TOGGLE_LIST,
 } from "../types";
 
 export default (state, action) => {
@@ -24,7 +24,7 @@ export default (state, action) => {
         loading: false,
       };
 
-    case GET_DATA_SUCCESS:
+    case GET_DATA:
       return {
         ...state,
         repos: action.payload,
@@ -34,6 +34,12 @@ export default (state, action) => {
       return {
         ...state,
         repos: action.payload,
+        loading: false,
+      };
+    case TOGGLE_LIST:
+      return {
+        ...state,
+        list: !state.list,
         loading: false,
       };
 
