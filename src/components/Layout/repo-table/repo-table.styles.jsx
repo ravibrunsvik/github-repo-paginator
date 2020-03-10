@@ -15,6 +15,7 @@ export const GithubTable = styled.table`
   padding: 10px;
   border-radius: 10px;
   border-collapse: collapse;
+  width: 100%;
 
   & tbody tr {
     &:hover {
